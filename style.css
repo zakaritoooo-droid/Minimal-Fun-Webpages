@@ -1,0 +1,160 @@
+@import url('https://googleapis.com');
+
+:root {
+    --bg-overlay: rgba(14, 12, 18, 0.4);
+    --glass-card: rgba(22, 20, 28, 0.65);
+    --sidebar-bg: rgba(12, 10, 16, 0.85);
+    --text-primary: #ffffff;
+    --text-muted: #9e93a8;
+    --border-glass: rgba(255, 255, 255, 0.05);
+    
+    /* Default fallback accent */
+    --flavor-accent: #e59866; 
+}
+
+/* Flavor Palette Injections */
+.theme-sakura { --flavor-accent: #f4b2c3; }    /* Soft Sakura Cherry Pink */
+.theme-matcha { --flavor-accent: #8fb88a; }    /* Soft Kyoto Matcha Green */
+.theme-raindrop { --flavor-accent: #a0c4df; }  /* Crisp Raindrop Blue */
+.theme-hokkaido { --flavor-accent: #d7b594; }  /* Creamy Espresso Tan */
+
+body {
+    margin: 0;
+    background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('animecafe.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-primary);
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-glass);
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.brand-logo {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-tab {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main-tab:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.03);
+    padding-left: 25px;
+}
+
+.main-tab.active {
+    color: #000000;
+    background-color: var(--text-primary);
+}
+
+.content-viewport {
+    flex-grow: 1;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass-card {
+    max-width: 440px;
+    width: 100%;
+    background-color: var(--glass-card);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--border-glass);
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-tag {
+    color: var(--flavor-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.product-title {
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.product-description {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0 0 35px 0;
+    font-weight: 400;
+}
+
+.order-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 16px 32px;
+    border-radius: 14px;
+    background-color: var(--flavor-accent);
+    color: #121010;
+    border: 1px solid var(--flavor-accent);
+    box-shadow: none;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.order-btn:hover {
+    background-color: var(--flavor-accent);
+    border-color: var(--flavor-accent);
+    color: #121010;
+    box-shadow: none;
+    transform: scale(1.03);
+}

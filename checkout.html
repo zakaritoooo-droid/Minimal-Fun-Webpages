@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Brews // Checkout Terminal</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body class="theme-checkout">
+
+    <div class="app-layout">
+        <!-- Persistent Structural Sidebar Menu -->
+        <nav class="sidebar">
+            <a href="index.html" class="brand-logo">☕ RETRO_BREWS</a>
+            <div class="menu-section">
+                <a href="index.html" class="main-tab">Back to Menu</a>
+            </div>
+        </nav>
+
+        <!-- Main Form Viewport -->
+        <main class="content-viewport">
+            <div class="glass-card">
+                <span class="product-tag">SECURE TRANSACT // LOGISTICS</span>
+                <h1 class="product-title">Customize Order</h1>
+                
+                <form class="checkout-form" action="/submit-order" method="POST">
+                    
+                    <!-- Selection Field for Coffee Varieties -->
+                    <div class="form-row">
+                        <label class="field-label">Select Blend</label>
+                        <select class="custom-select" name="coffee-type" required>
+                            <option value="sakura">Sakura Latte</option>
+                            <option value="matcha">Kyoto Matcha</option>
+                            <option value="raindrop">Raindrop Cold Brew</option>
+                            <option value="hokkaido">H北海道 Espresso Roast</option>
+                        </select>
+                    </div>
+
+                    <!-- Layout Options: Hot vs Cold Radio Fields -->
+                    <div class="form-row">
+                        <label class="field-label">Temperature Matrix</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="temp" value="hot" checked>
+                                <span class="radio-tile">Hot Brew</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="temp" value="cold">
+                                <span class="radio-tile">Iced</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Layout Options: Sugar Level Selection Blocks -->
+                    <div class="form-row">
+                        <label class="field-label">Sugar Ratio</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="sugar" value="0">
+                                <span class="radio-tile">0%</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sugar" value="50" checked>
+                                <span class="radio-tile">50%</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="sugar" value="100">
+                                <span class="radio-tile">100%</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Number Counter & Input Form Wrappers -->
+                    <div class="form-grid-split">
+                        <div class="form-row">
+                            <label class="field-label">Quantity</label>
+                            <input type="number" class="custom-input" name="quantity" min="1" max="10" value="1" required>
+                        </div>
+                        <div class="form-row">
+                            <label class="field-label">Phone Contact</label>
+                            <input type="text" class="custom-input" name="phone" placeholder="+212..." required>
+                        </div>
+                    </div>
+
+                    <!-- Text Data Entry: Delivery Destination -->
+                    <div class="form-row">
+                        <label class="field-label">Delivery Destination Address</label>
+                        <input type="text" class="custom-input" name="address" placeholder="Street, Building, Apartment Node" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Specifications</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
